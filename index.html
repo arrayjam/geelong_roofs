@@ -108,16 +108,15 @@
       </nav>
     </div>
 
+    <script src="vendor/d3/d3.js"></script>
     <script>
-      var map = L.mapbox.map('map', 'arrayjam.ioidc6bp', {
-        attribution: 'Data ©City of Greater Geelong. Cartography by Yuri Feldman.',
-        maxZoom: 17,
-        minZoom: 14,
-        maxBounds: L.latLngBounds(L.latLng(-38.3121,144.2148), L.latLng(-37.9588, 144.7503))
-      })
-      .setView([-38.1473, 144.3432], 15);
-      map.legendControl.addLegend(document.getElementById('legend').innerHTML);
-      setTimeout(function() { document.getElementsByClassName("map-legend")[1].remove(); }, 500);
+      var base = "http://titus:8788/",
+          mapName = "geelong";
+      d3.json(base + mapName + ".json", function(tilejson) {
+        var map = L.mapbox.map('map', tilejson);
+
+        map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+      });
     </script>
   </body>
 </html>

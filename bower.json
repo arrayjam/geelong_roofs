@@ -1,0 +1,20 @@
+{
+  "name": "bower",
+  "version": "0.0.0",
+  "homepage": "https://github.com/arrayjam/geelong_roofs",
+  "authors": [
+    "Yuri Feldman <yuri@tbqh.net>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.4.11"
+  }
+}
